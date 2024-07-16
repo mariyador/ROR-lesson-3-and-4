@@ -11,13 +11,13 @@ loop do
     puts "Is your number #{guess}?"
     answer = gets.chomp.downcase
     if answer == "too low"
-        if guess >= highest
+        if guess == highest
             puts "You are lying! The guess can't be too low."
             break
           end
         lowest = guess + 1
     elsif answer == "too high"
-        if guess <= lowest
+        if guess == lowest
             puts "You are lying! The guess can't be too high."
             break
           end
@@ -27,7 +27,7 @@ loop do
         puts "Do you want to play again? Print Yes or No"
         if gets.chomp.upcase == "Yes"
             number_guess = 0
-            lowest = 0
+            lowest = 1
             highest = 100
             next
         else

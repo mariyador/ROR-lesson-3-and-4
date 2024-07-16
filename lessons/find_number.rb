@@ -6,13 +6,17 @@ number_guess = 0
 while true
     puts "Enter number from 1 to 100"
     number = gets.to_i
+    if number == 0
+        puts "Invalid input! Please enter a number between 1 and 100."
+        next
+    end
     number_guess += 1
     if number == secret_number
         puts "You guessed the number #{secret_number} in #{number_guess} try/tries."
         puts "Do you want to play again? Print Yes or No"
         if gets.chomp.upcase == "Yes"
             secret_number = rand(1..100)
-            number_steps = 0
+            number_guess = 0
             next
         else
             puts "Good Bye!"
